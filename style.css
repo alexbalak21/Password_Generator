@@ -1,0 +1,22 @@
+*{
+    font-size: 18px;
+}
+
+label{
+    font-weight: bold;
+}
+
+input[type=checkbox]{
+    margin: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+#lenght{
+    width: 40px;
+    text-align: center;
+}
+
