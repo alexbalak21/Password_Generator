@@ -21,7 +21,8 @@ generate_btn.addEventListener('click', generate)
 
 function generate(){
     let rand = ''
-    let possibles = lowercase
+    let possibles = ''
+    if (document.getElementById('Lowercase').checked) possibles += lowercase
     if (document.getElementById('Uppercase').checked) possibles += uppercase
     if (document.getElementById('Numbers').checked) possibles += numbers
     if (document.getElementById('Symbols').checked) possibles += symbols
