@@ -4,8 +4,9 @@ input::-webkit-inner-spin-button {
 }
 
 input:focus {
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: initial !important;
 }
 
 input[type="checkbox"] {
@@ -25,6 +26,7 @@ label {
 #output {
   max-width: 450px;
   height: 46px;
+  font-size: 16px;
 }
 @media (max-width: 767px) {
   #copy {

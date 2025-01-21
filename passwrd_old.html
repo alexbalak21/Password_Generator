@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            * {
+                font-size: 18px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            input[type="checkbox"] {
+                margin: 10px;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                appearance: none;
+            }
+
+            #lenght {
+                width: 40px;
+                text-align: center;
+            }
+            body {
+                height: 99vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            input,
+            label,
+            h1 {
+                text-align: center;
+            }
+        </style>
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Password Generator</h1>
+            <input id="generated" type="text" />
+            <button id="copy">COPY</button>
+            <br />
+            <br />
+            <div class="checks">
+                <button id="minus">-</button>
+                <input id="lenght" type="number" value="23" max="32" min="1" />
+                <button id="plus">+</button>
+                <br />
+                <br />
+                <input id="Lowercase" type="checkbox" checked />
+                <label for="Lowercase">Lowercase</label>
+                <br />
+                <input id="Uppercase" type="checkbox" checked />
+                <label for="Uppercase">Uppercase</label>
+                <br />
+                <input id="Numbers" type="checkbox" checked />
+                <label for="Numbers">Numbers</label>
+                <br />
+                <input id="Symbols" type="checkbox" checked />
+                <label for="Symbols">Symbols</label>
+                <br />
+                <input id="spec_ymbols" type="checkbox" />
+                <label for="spec_ymbols">Spesific symbols</label>
+                <br />
+
+                <br />
+                <button id="generate">Generate</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        const generated = document.getElementById("generated")
+        const generate_btn = document.getElementById("generate")
+
+        const lowercase = "abcdefghijklmnopqrstuvwxyz"
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        const numbers = "0123456789"
+        const symbols = "?!@#$%^&*+"
+        const spec_symbols = "/()[],.:;=-_"
+        const lenght = document.getElementById("lenght")
+
+        function get_char(string, max) {
+            let index = Math.floor(Math.random() * max)
+            return string.charAt(index)
+        }
+        document.getElementById("plus").addEventListener("click", () => {
+            if (lenght.value < 32) lenght.value++
+        })
+        document.getElementById("minus").addEventListener("click", () => {
+            if (lenght.value > 1) lenght.value--
+        })
+
+        document.getElementById("copy").addEventListener("click", () => navigator.clipboard.writeText(generated.value))
+        generate_btn.addEventListener("click", generate)
+
+        function generate() {
+            let rand = ""
+            let possibles = ""
+            if (document.getElementById("Lowercase").checked) possibles += lowercase
+            if (document.getElementById("Uppercase").checked) possibles += uppercase
+            if (document.getElementById("Numbers").checked) possibles += numbers
+            if (document.getElementById("Symbols").checked) possibles += symbols
+            if (document.getElementById("spec_ymbols").checked) possibles += spec_symbols
+            const gen_lenght = lenght.value
+            const string_lengh = possibles.length
+            for (let i = 0; i < gen_lenght; i++) rand += get_char(possibles, string_lengh)
+            generated.value = rand
+        }
+        generate()
+    </script>
+</html>
