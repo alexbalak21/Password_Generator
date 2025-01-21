@@ -1,4 +1,4 @@
-const generated = document.getElementById("generated")
+const output = document.getElementById("output")
 const generate_btn = document.getElementById("generate")
 
 const lowercase = "abcdefghijklmnopqrstuvwxyz"
@@ -21,7 +21,7 @@ document.getElementById("minus").addEventListener("click", () => {
 
 document
   .getElementById("copy")
-  .addEventListener("click", () => navigator.clipboard.writeText(generated.value))
+  .addEventListener("click", () => navigator.clipboard.writeText(output.value))
 generate_btn.addEventListener("click", generate)
 
 function generate() {
@@ -35,7 +35,7 @@ function generate() {
   const gen_length = length.value
   const string_length = possibles.length
   for (let i = 0; i < gen_length; i++) rand += get_char(possibles, string_length)
-  generated.value = rand
-  generated.select()
+  output.value = rand
+  output.select()
 }
 generate()
