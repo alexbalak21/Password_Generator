@@ -1,3 +1,18 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+
 label {
   font-size: 20px !important;
 }
@@ -16,4 +31,14 @@ label {
     margin-top: 30px;
     margin-bottom: 16px;
   }
+}
+
+@media (min-width: 768px) {
+  #output {
+    margin-left: 108px;
+  }
+}
+
+#length-container {
+  margin-left: 24px;
 }
