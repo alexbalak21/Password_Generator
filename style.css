@@ -6,3 +6,14 @@ label {
   background-color: #198754;
   border-color: #198754;
 }
+
+#output {
+  max-width: 450px;
+  height: 46px;
+}
+@media (max-width: 767px) {
+  #copy {
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+}
