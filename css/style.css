@@ -20,12 +20,15 @@ label {
 
 #copy-container {
   position: relative;
+  width: 100px;
+  border: 1px solid rebeccapurple;
+  padding: 0px;
 }
 
 #copied {
   position: absolute;
   top: -30px;
-  left: 30px;
+  left: 20px;
   color: #198754;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
@@ -54,6 +57,8 @@ button#copy {
   height: 46px;
   font-size: 16px;
 }
+
+/* SMALL SCREEN */
 @media (max-width: 767px) {
   #copy {
     margin-top: 30px;
@@ -64,6 +69,7 @@ button#copy {
   }
 }
 
+/* BIG SCREEN */
 @media (min-width: 768px) {
   #output {
     margin-left: 80px;
