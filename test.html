@@ -3,31 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Centered Div with Button</title>
-    <style>
-      .input {
-        text-align: center;
-        margin-top: 400px;
-      }
-      .input input {
-        text-align: center;
-      }
-      .model {
-        text-align: center;
-      }
-
-      .btn {
-        float: right;
-      }
-    </style>
+    <title>Test</title>
   </head>
-  <body>
-    <div class="input">
-      <input type="text" value="|" />
-    </div>
-    <div class="btn">
-      <button>Generate</button>
-    </div>
-    <h4 class="model">|</h4>
-  </body>
+  <body></body>
+  <script>
+    const arr = [42, 17, 89, 23, 56, 78, 34, 91, 65, 12];
+
+    let last_num = arr[0];
+    for (n of arr) {
+      if (last_num == 0) {
+        last_num = n;
+        continue;
+      }
+      if (n < last_num) last_num = n;
+    }
+
+    console.log(last_num);
+  </script>
 </html>
