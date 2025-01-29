@@ -18,6 +18,32 @@ label {
   font-size: 20px !important;
 }
 
+#copy-container {
+  position: relative;
+}
+
+#copied {
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  color: #198754;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#copied.show {
+  opacity: 1;
+}
+
+button#copy {
+  width: 80px;
+  height: 46px;
+}
+
+#copy-icon {
+  font-size: 22px;
+}
+
 .form-check-input:checked {
   background-color: #198754;
   border-color: #198754;
@@ -33,14 +59,32 @@ label {
     margin-top: 30px;
     margin-bottom: 16px;
   }
+  #copied {
+    top: 3px;
+  }
 }
 
 @media (min-width: 768px) {
   #output {
-    margin-left: 108px;
+    margin-left: 80px;
   }
 }
 
 #length-container {
   margin-left: 24px;
+}
+
+table tr td:last-child {
+  text-align: end;
+  min-width: 174px;
+}
+
+table tr td:nth-child(1),
+table tr th:nth-child(1) {
+  text-align: start;
+}
+
+th,
+td {
+  text-align: center;
 }
