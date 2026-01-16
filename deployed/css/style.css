@@ -63,3 +63,28 @@ html[data-bs-theme="dark"] .tooltip {
 #themeToggle:hover {
   background-color: DimGray;
 }
+
+#themeToggle svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+#sun svg path {
+  stroke: currentColor;
+}
+
+#themeToggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+#sun svg path {
+  stroke: currentColor;
+}
+
+#copy svg {
+  width: 18px;
+  height: 18px;
+  color: white; /* icon becomes white */
+}

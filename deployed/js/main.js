@@ -7,7 +7,16 @@ const output = document.getElementById("output");
 const copyBtn = document.getElementById("copy");
 const generateBtn = document.getElementById("generate");
 
-// Theme
+async function loadSVG(id, file) {
+  const container = document.getElementById(id);
+  const svg = await fetch(file).then((res) => res.text());
+  container.innerHTML = svg;
+}
+
+await loadSVG("moon", "icons/moon.svg");
+await loadSVG("sun", "icons/sun.svg");
+await loadSVG("copyIcon", "icons/copy.svg");
+
 applyTheme(getSystemTheme());
 initThemeToggle();
 

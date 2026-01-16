@@ -1,15 +1,14 @@
-// theme.js
-
 const html = document.documentElement;
-const themeToggle = document.getElementById("themeToggle");
-const moon = document.getElementById("moon");
-const sun = document.getElementById("sun");
 
 export function getSystemTheme() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export function applyTheme(theme) {
+  const themeToggle = document.getElementById("themeToggle");
+  const moon = document.getElementById("moon");
+  const sun = document.getElementById("sun");
+
   html.setAttribute("data-bs-theme", theme);
 
   if (theme === "dark") {
@@ -24,6 +23,8 @@ export function applyTheme(theme) {
 }
 
 export function initThemeToggle() {
+  const themeToggle = document.getElementById("themeToggle");
+
   themeToggle.addEventListener("click", () => {
     const current = html.getAttribute("data-bs-theme");
     const next = current === "dark" ? "light" : "dark";
