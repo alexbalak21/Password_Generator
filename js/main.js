@@ -1,5 +1,5 @@
 import {getSystemTheme, applyTheme, initThemeToggle} from "./theme.js";
-import {initCopyTooltip} from "./tooltip.js";
+import {initCopyButton} from "./copy.js";
 import {generatePassword} from "./generator.js";
 import {initLengthButtons} from "./length.js";
 
@@ -13,20 +13,22 @@ async function loadSVG(id, file) {
   container.innerHTML = svg;
 }
 
-await loadSVG("moon", "icons/moon.svg");
-await loadSVG("sun", "icons/sun.svg");
-await loadSVG("copyIcon", "icons/copy.svg");
+// Load icons
+await loadSVG("moon", "/static/icons/moon.svg");
+await loadSVG("sun", "/static/icons/sun.svg");
+await loadSVG("copyIcon", "/static/icons/copy.svg");
 
+// Theme
 applyTheme(getSystemTheme());
 initThemeToggle();
 
-// Tooltip
-initCopyTooltip(copyBtn, output);
+// Copy button (merged logic)
+initCopyButton(copyBtn, output);
 
 // Length buttons
 initLengthButtons();
 
-// Generator
+// Generator button
 generateBtn.addEventListener("click", () => {
   output.value = generatePassword();
 });
