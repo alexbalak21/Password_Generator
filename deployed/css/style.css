@@ -44,3 +44,22 @@ label {
 #length-container {
   margin-left: 24px;
 }
+
+html[data-bs-theme="light"] .tooltip {
+  --bs-tooltip-bg: LightGray;
+  --bs-tooltip-color: #000;
+}
+
+html[data-bs-theme="dark"] .tooltip {
+  --bs-tooltip-bg: #000;
+  --bs-tooltip-color: #fff;
+}
+
+#themeToggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+#themeToggle:hover {
+  background-color: DimGray;
+}
